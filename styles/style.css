@@ -1,12 +1,28 @@
 @import url("http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
 
 body {
-  background: #f1f1f1;
+  background:
+    -webkit-linear-gradient(45deg, hsla(261, 99%, 87%, 1) 0%, hsla(261, 99%, 87%, 0) 70%),
+    -webkit-linear-gradient(315deg, hsla(272, 99%, 92%, 1) 10%, hsla(272, 99%, 92%, 0) 80%),
+    -webkit-linear-gradient(225deg, hsla(209, 97%, 77%, 1) 10%, hsla(209, 97%, 77%, 0) 80%),
+    -webkit-linear-gradient(135deg, hsla(305, 99%, 95%, 1) 100%, hsla(305, 99%, 95%, 0) 70%);
+  background:
+    linear-gradient(45deg, hsla(261, 99%, 87%, 1) 0%, hsla(261, 99%, 87%, 0) 70%),
+    linear-gradient(135deg, hsla(272, 99%, 92%, 1) 10%, hsla(272, 99%, 92%, 0) 80%),
+    linear-gradient(225deg, hsla(209, 97%, 77%, 1) 10%, hsla(209, 97%, 77%, 0) 80%),
+    linear-gradient(315deg, hsla(305, 99%, 95%, 1) 100%, hsla(305, 99%, 95%, 0) 70%);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
+
+
+
+
 
 .navbar {
   background: #fff;
   margin-bottom: 20px;
+  box-shadow: 0 5px 12px rgba(0,0,0,.5);
 }
 
 .navbar img {
@@ -37,12 +53,17 @@ body {
   box-shadow: 0 1px 0 rgba(0,0,0,0.10);
 }
 
+.player {
+  box-shadow: 0px 15px 20px 1px rgba(0,0,0,0.75);
+
+}
+
 .video-player-details {
   background: #fff;
   padding: 8px;
   border: 0;
   box-shadow: 0 1px 2px rgba(0,0,0,.1);
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 .video-list {
