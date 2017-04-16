@@ -8,11 +8,13 @@ var searchYouTube = (options, callback) => {
       key: options.key,
       part: 'snippet',
       q: options.query,
-      maxResults: options.max
-
+      maxResults: options.max,
+      type: 'video',
+      videoEmbeddable: 'true'
     },
     success: function (data) {
-      console.log('GET request successful.', data);
+      callback(data.items);
+      console.log('GET request successful.', data.items);
     },
     error: function(data) {
       console.error('GET request fail!!', data);

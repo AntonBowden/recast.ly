@@ -5,10 +5,30 @@ class App extends React.Component {
     //this.onVideoClick = this.onVideoClick.bind(this);
 
     this.state = {
-      currentVideo: this.props.videos[0],
-      videos: this.props.videos
+      currentVideo: window.exampleVideoData[0],
+      videos: window.exampleVideoData
     };
   }
+
+  componentDidMount () {
+    this.getYoutubeVideos('metallica');
+  }
+
+  getYoutubeVideos(query) {
+    var options = {
+      key: this.props.API_KEY,
+      query: query
+    };
+
+    this.props.searchYouTube(options, (videos) => {
+      this.setState({
+        videos: videos,
+        currentVideo: videos[0]
+      });
+    });
+  }
+
+
 
   onVideoClick(video) {
     this.setState({
@@ -19,33 +39,27 @@ class App extends React.Component {
   render() {
     return (
 
-      <div>
-        <Nav />
+      <div className="container">
+        <Nav handleSearch = {_.debounce(this.getYoutubeVideos.bind(this), 500)}/>
+
+        <div className="row">
+
+
         <div className="col-md-7">
-
           <VideoPlayer video = {this.state.currentVideo}/>
-
         </div>
 
         <div className="col-md-5">
-
           <VideoList videos = {this.state.videos} onVideoClick = {this.onVideoClick.bind(this)}/>
+        </div>
 
         </div>
+
       </div>
     );
 
   }
 }
-
-
-
-
-
-
-
-
-
 
 
 

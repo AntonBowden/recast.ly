@@ -1,9 +1,8 @@
-var Nav = () => (
+var Nav = ({handleSearch}) => (
   <nav className="navbar">
 
     <div className="col-md-6 col-md-offset-3">
-    Recast.ly
-      <Search />
+      <Search handleSearch = {handleSearch}/>
     </div>
   </nav>
 );

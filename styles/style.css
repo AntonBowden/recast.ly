@@ -74,8 +74,13 @@ body {
 }
 
 .video-list-entry {
+  width: 100%;
+
+  display: inline-block;
   font-size: 16px;
+  margin: auto;
   padding: 8px;
+  float: right;
 }
 
 .video-list-entry-title {
@@ -90,4 +95,22 @@ body {
 .video-list-entry-detail {
   font-size: 12px;
   color: #999;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
 }
